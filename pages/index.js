@@ -1,7 +1,10 @@
 import Head from "next/head";
+import Layout from "../components/Layout.jsx";
 
 export default function Home() {
   return (
+    /*wrapper layout component with the others */
+    <Layout>
       <div>
         <Head>
           <title>Foodie Go</title>
@@ -10,9 +13,9 @@ export default function Home() {
         </Head>
         {/* body */}
         <main>
-          <h1>Subscribe Zainkeepscode</h1>        
+          <h1></h1>
         </main>
       </div>
+    </Layout>
   );
 }
-
