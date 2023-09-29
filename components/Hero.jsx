@@ -1,6 +1,7 @@
 import Image from "next/image";
 import css from "../styles/Hero.module.css";
 import Cherry from "../assets/Cherry.png";
+import HeroImage from "../assets/HeroImage.png";
 
 export default function Hero() {
   return (
@@ -27,7 +28,12 @@ export default function Hero() {
       </div>
 
       {/*right side -images */}
-      <div className={css.right}></div>
+      <div className={css.right}>
+
+        <div className={css.imageContainer}>
+            <Image src={HeroImage} alt="" layout="intrinsic" />
+        </div>
+      </div>
     </div>
   );
 }
