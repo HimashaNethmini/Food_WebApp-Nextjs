@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/Layout.jsx";
+import Hero from "../components/Hero.jsx";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         </Head>
         {/* body */}
         <main>
-          <h1></h1>
+          <Hero />
         </main>
       </div>
     </Layout>
