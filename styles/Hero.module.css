@@ -37,3 +37,14 @@
     font-size: 1.5rem;
 }
 
+.right {
+    position: relative;
+}
+
+.imageContainer {
+    width: 58rem;
+    position: absolute;
+    top: -70px;
+    left: -1px;
+
+}
