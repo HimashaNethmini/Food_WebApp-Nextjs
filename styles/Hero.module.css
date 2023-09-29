@@ -22,3 +22,18 @@
     font-weight: bold;
     color: var(--themeRed)
 }
+
+.heroText{
+    display: flex;
+    flex-direction: column;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.miniText {
+    width: 70%;
+    color: var(--gray);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
