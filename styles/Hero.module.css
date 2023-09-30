@@ -48,3 +48,60 @@
     left: -1px;
 
 }
+
+.contactUs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: max-content;
+    padding: 1rem;
+    border-radius: 5rem;
+    top: 8rem;
+    gap: 1rem;
+    background-color: white;
+    box-shadow: var(--shadow);
+    color: var(--themeRed);
+    font-size: 1.2rem;
+}
+
+.contactUs > Div {
+    background-color: rgb(59,208,59);
+    width: fit-content;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactUs:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.Pizza {
+    display: flex;
+    gap: 1rem;
+    background-color: white;
+    box-shadow: var(--shadow);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 19rem;
+    width: max-content;
+}
+
+.Pizza>:nth-child(1){
+    width: 6rem;
+    height: 4rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.Pizza>:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+}
