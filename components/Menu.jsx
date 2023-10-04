@@ -3,7 +3,6 @@ import css from "../styles/Menu.module.css";
 import { urlFor } from "../library/client";
 
 export default function Menu({ pizzas }) {
-  
   return (
     <div className={css.container}>
       <div className={css.heading}>
@@ -13,22 +12,27 @@ export default function Menu({ pizzas }) {
       </div>
 
       {/* mapping the array */}
-      {pizzas.map((pizza,id)=> {
+      <div className={css.menu}>
+        {pizzas.map((pizza, id) => {
+          const src = urlFor(pizza.image).url();
+          return (
+            <div className={css.pizza} key={id}>
+              <div className={css.ImageWrapper}>
+                <Image
+                  loader={() => src}
+                  src={src}
+                  alt=""
+                  objectFit="cover"
+                  layout="fill"
+                />
+              </div>
 
-        const src = urlFor(pizza.image).url()
-        return(
-          <div className={css.pizza} key={id}>
-
-            <div className={css.ImageWrapper}>
-              <Image loader= {()=> src} src={src} alt="" 
-              objectFit="cover"
-              layout="fill" />
+              <span> {pizza.name}</span>
+              <span>${pizza.price[1]}</span>
             </div>
-
-          </div>
-        )
-      })}
-
+          );
+        })}
+      </div>
     </div>
   );
 }

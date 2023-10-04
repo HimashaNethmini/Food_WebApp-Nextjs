@@ -3,8 +3,11 @@ import Layout from "../components/Layout.jsx";
 import Hero from "../components/Hero.jsx";
 import css from "../styles/Home.module.css"
 import Services from "../components/Services.jsx";
+import Menu from "../components/Menu.jsx";
+import { client } from "../library/client";
 
-export default function Home() {
+export default function Home({pizzas}) {
+
   return (
     /*wrapper layout component with the others */
     <Layout>
@@ -18,8 +21,22 @@ export default function Home() {
         <main>
           <Hero />
           <Services />
+          <Menu pizzas = {pizzas} />
         </main>
       </div>
     </Layout>
   );
+}
+
+/* as we are usig this , don't 
+need to write code to render data to client side frm the db */
+export const getServerSideProps = async()=>{
+  const query = '*[_type == "pizza"]';
+  const pizzas = await client.fetch(query);
+  return {
+    props: {
+      pizzas
+    }
+  }
+  
 }
