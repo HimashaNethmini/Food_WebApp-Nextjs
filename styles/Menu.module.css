@@ -48,3 +48,12 @@
     overflow: hidden;
     border-radius: 2rem;
 }
+
+/* creating on hover effects on pizza images */
+.ImageWrapper>span>img:hover {
+    transform: scale(1.1);
+}
+
+.pizza:hover {
+    cursor: pointer;
+}
