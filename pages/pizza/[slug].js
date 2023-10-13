@@ -27,7 +27,7 @@ export default function Pizza({ pizza }) {
         <div className={css.right}>
             <span> {pizza.name}</span>
             <span> {pizza.details}</span>
-            <span> $ {pizza.price[1]}</span>
+            <span> <span style={{color:"var(--themeRed)"}}>$</span> {pizza.price[1]}</span>
 
           <div className={css.size}>
             <span>Size</span>
@@ -61,7 +61,7 @@ export default function Pizza({ pizza }) {
           <div className={`btn ${css.btn}`}>
             Add to Cart
           </div>
-          
+
         </div>
       </div>
     </Layout>
