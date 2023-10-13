@@ -77,6 +77,7 @@ export default function Pizza({ pizza }) {
                 objectFit="contain" 
                 onClick = {()=>handleQuantity("dec")}/>
 
+{/* make quantity dynamic */}
                 <span> {Quantity} </span>
                 <Image src={RightArrow}
                 alt=""
