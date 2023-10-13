@@ -4,10 +4,14 @@ import Layout from "../../components/Layout";
 import { client, urlFor } from "../../library/client";
 import LeftArrow from "../../assets/arrowLeft.png"
 import RightArrow from "../../assets/arrowRight.png"
+import { useState } from "react";
 /*making a dynamic page */
 
 export default function Pizza({ pizza }) {
   const src = urlFor(pizza.image).url();
+
+  /* use state hook */
+  const [ size, setSize] = useState(1)
 
   return (
     <Layout>
@@ -32,9 +36,20 @@ export default function Pizza({ pizza }) {
           <div className={css.size}>
             <span>Size</span>
             <div className={css.sizeVariants}>
-              <div> Small </div>
-              <div> Medium </div>
-              <div> Large </div>
+
+                {/* change the colour according to size */}
+              <div  
+                onClick={() =>setSize(0)}
+                className={size === 0? css.selected : ""}
+              > 
+                Small 
+              </div>
+
+              <div onClick={() =>setSize(1)}
+              className={size === 1? css.selected : ""}> Medium </div>
+
+              <div onClick={() =>setSize(2)}
+              className={size === 2? css.selected : ""}> Large </div>
             </div>
           </div>
 
@@ -43,7 +58,7 @@ export default function Pizza({ pizza }) {
             <span> Quantity </span>
 
             <div className={css.counter}>
-                <Image src={LeftArrowArrow}
+                <Image src={LeftArrow}
                 alt=""
                 height={20} width={20}
                 objectFit="contain" />
