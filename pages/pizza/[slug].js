@@ -12,6 +12,17 @@ export default function Pizza({ pizza }) {
 
   /* use state hook */
   const [ size, setSize] = useState(1)
+  const [ Quantity, setQuantity] = useState(1)
+
+  //handle quanity
+  const handleQuantity = (type) => {
+    type === 'inc'
+    ?setQuantity((prev)=>prev+1) 
+    :Quantity ===1
+    ?null
+    : setQuantity((prev) => prev-1);
+
+  }
 
   return (
     <Layout>
@@ -31,7 +42,9 @@ export default function Pizza({ pizza }) {
         <div className={css.right}>
             <span> {pizza.name}</span>
             <span> {pizza.details}</span>
-            <span> <span style={{color:"var(--themeRed)"}}>$</span> {pizza.price[1]}</span>
+
+            {/*render prices according to sizes */}
+            <span> <span style={{color:"var(--themeRed)"}}>$</span> {pizza.price[size]}</span>
 
           <div className={css.size}>
             <span>Size</span>
@@ -61,13 +74,15 @@ export default function Pizza({ pizza }) {
                 <Image src={LeftArrow}
                 alt=""
                 height={20} width={20}
-                objectFit="contain" />
+                objectFit="contain" 
+                onClick = {()=>handleQuantity("dec")}/>
 
-                <span> 1 </span>
+                <span> {Quantity} </span>
                 <Image src={RightArrow}
                 alt=""
                 height={20} width={20}
-                objectFit="contain" />
+                objectFit="contain" 
+                onClick={()=>handleQuantity("inc")}/>
                 
             </div>
           </div>
